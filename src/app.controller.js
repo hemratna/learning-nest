@@ -9,7 +9,12 @@ export class AppController {
   }
 
   @Get()
-  getHello() {
+  async getHello() {
+    console.log('1');
+    await setTimeout(function() {
+      console.log('timeout completed');
+    }, 1000);
+    console.log('2');
     return this.appService.getHello();
   }
 }
